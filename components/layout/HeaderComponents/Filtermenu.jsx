@@ -17,7 +17,7 @@ const Filtermenu = () => {
 
   return (
     <div className="bg-white py-3">
-      <div className="w-full max-w-[1366px] px-3 mx-auto flex items-center justify-between gap-4">
+      <div className="w-full content-container flex items-center justify-between gap-4">
         <div className="w-full max-w-72">
           <CustomReactSelect
             instanceId="switch-client"
@@ -27,9 +27,6 @@ const Filtermenu = () => {
             placeholder="Switch Client"
           />
         </div>
-        <Input 
-            placeholder="Search..." />
-
         <Button variant="ghost" className="p-0 flex-shrink-0">
           <Image src={iconSelfService} alt="Self Service" width={48} height={48} />
         </Button>

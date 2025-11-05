@@ -16,25 +16,27 @@ import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
+  SheetFooter,
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { ChevronDown, Menu, Settings, X } from "lucide-react";
+import {
+  ChevronDown,
+  Mail,
+  Menu,
+  PhoneOutgoing,
+  Settings,
+  X,
+} from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-interface TopHeaderProps {
-  onMenuClick?: () => void;
-}
-
-const TopHeader = ({ onMenuClick }: TopHeaderProps) => {
+const TopHeader = ({ onMenuClick }) => {
   const [profileOpen, setProfileOpen] = useState(false);
   return (
     <div className="bg-primary">
       <div className="custom-container flex justify-between items-center h-16 !pr-0 sm:!pr-3">
         <div className="flex items-center gap-1">
-          <Button 
-            className="p-2 shadow-none md:hidden"
-            onClick={onMenuClick}
-          >
+          <Button className="p-2 shadow-none md:hidden" onClick={onMenuClick}>
             <Menu className="!w-5 !h-5" />
           </Button>
           <Link href="/" className="flex items-center gap-1.5">
@@ -101,7 +103,10 @@ const TopHeader = ({ onMenuClick }: TopHeaderProps) => {
         </div>
       </div>
       <Sheet open={profileOpen} onOpenChange={setProfileOpen}>
-        <SheetContent side="right" className="w-full sm:w-[360px] p-0">
+        <SheetContent
+          side="right"
+          className="w-full sm:w-[360px] p-0 flex flex-col"
+        >
           <SheetHeader className="px-8 py-6">
             <div className="flex items-center justify-between gap-2">
               <SheetTitle className="text-2xl font-medium text-foreground">
@@ -118,7 +123,7 @@ const TopHeader = ({ onMenuClick }: TopHeaderProps) => {
             </div>
           </SheetHeader>
 
-          <div className="pb-3">
+          <div className="flex-1 pb-3">
             {/* User Profile Section */}
             <div className="px-8 py-6 flex items-center justify-between hover:bg-slate-50 transition-colors">
               <div className="flex items-center gap-4">
@@ -163,6 +168,38 @@ const TopHeader = ({ onMenuClick }: TopHeaderProps) => {
               </button>
             </div>
           </div>
+          <SheetFooter className="p-4 border-t border-slate-200 flex flex-col sm:flex-col items-center sm:justify-center gap-3">
+            <Avatar className="rounded-full h-14 w-14 border-2 border-blue-600">
+              <AvatarImage
+                className="rounded-full border-2 border-blue-400"
+                src="https://github.com/evilrabbit.png"
+                alt="@evilrabbit"
+              />
+              <AvatarFallback>ER</AvatarFallback>
+            </Avatar>
+            <div className="text-center">
+              <h5 className="text-lg font-bold text-blue-950 leading-none">
+                Thandi Avongara
+              </h5>
+              <span className="text-xs text-muted-foreground">
+                Relationship Manager
+              </span>
+            </div>
+            <div className="flex gap-3">
+              <Link
+                href="/"
+                className="p-2 border border-blue-600 rounded-lg text-sm text-blue-600 hover:underline"
+              >
+                <PhoneOutgoing size={18} />
+              </Link>
+              <Link
+                href="/"
+                className="p-2 border border-blue-600 rounded-lg text-sm text-blue-600 hover:underline"
+              >
+                <Mail size={18} />
+              </Link>
+            </div>
+          </SheetFooter>
         </SheetContent>
       </Sheet>
     </div>

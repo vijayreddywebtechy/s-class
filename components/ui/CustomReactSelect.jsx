@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Select, { Props as SelectProps, components as selectComponents } from "react-select";
+import Select, { components as selectComponents } from "react-select";
 import { ChevronDown, Check } from "lucide-react";
 
 // Design system color tokens - matches Tailwind CSS variables
@@ -31,7 +31,7 @@ const sizing = {
 };
 
 const customSelectStyles = {
-  control: (base: any, state: any) => {
+  control: (base, state) => {
     const isFocused = state.isFocused || state.menuIsOpen;
     
     return {
@@ -53,7 +53,7 @@ const customSelectStyles = {
       },
     };
   },
-  singleValue: (base: any) => ({
+  singleValue: (base) => ({
     ...base,
     color: colors.foreground,
     fontSize: sizing.fontSizeMobile,
@@ -61,7 +61,7 @@ const customSelectStyles = {
       fontSize: sizing.fontSizeDesktop,
     },
   }),
-  placeholder: (base: any) => ({
+  placeholder: (base) => ({
     ...base,
     fontSize: sizing.fontSizeMobile,
     color: colors.mutedForeground,
@@ -69,7 +69,7 @@ const customSelectStyles = {
       fontSize: sizing.fontSizeDesktop,
     },
   }),
-  option: (base: any, state: any) => ({
+  option: (base, state) => ({
     ...base,
     backgroundColor: state.isFocused ? colors.accent : colors.background,
     color: colors.foreground,
@@ -78,7 +78,7 @@ const customSelectStyles = {
       backgroundColor: colors.accentActive,
     },
   }),
-  menu: (base: any) => ({
+  menu: (base) => ({
     ...base,
     borderRadius: "0.375rem",
     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
@@ -87,7 +87,7 @@ const customSelectStyles = {
 };
 
 // --- Custom Dropdown Indicator ---
-const DropdownIndicator = (props: any) => {
+const DropdownIndicator = (props) => {
   return (
     <selectComponents.DropdownIndicator {...props}>
       <ChevronDown
@@ -102,7 +102,7 @@ const DropdownIndicator = (props: any) => {
 const IndicatorSeparator = () => null;
 
 // --- Custom Option component (adds checkmark) ---
-const Option = (props: any) => {
+const Option = (props) => {
   return (
     <selectComponents.Option {...props}>
       <div className="flex items-center w-full">
@@ -117,7 +117,7 @@ const Option = (props: any) => {
   );
 };
 
-function CustomReactSelect<OptionType>(props: SelectProps<OptionType>) {
+function CustomReactSelect(props) {
   return <Select {...props} 
             styles={customSelectStyles} 
             components={{ 

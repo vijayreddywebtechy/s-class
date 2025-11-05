@@ -8,8 +8,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${bentonSansPro.variable}`}>
-      <body className={`${bentonSansPro.className} antialiased`}>
+    <html lang="en" className={`${bentonSansPro.variable} h-full`}>
+      <body className={`${bentonSansPro.className} antialiased h-full`}>
         {children}
       </body>
     </html>

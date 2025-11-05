@@ -69,28 +69,24 @@ const DesktopNavigation = () => {
 };
 
 // Mobile Menu Item Component
-const MobileMenuItem = ({ item, pathname, onClose }: {
-  item: typeof menuItems[0];
-  pathname: string;
-  onClose: () => void;
-}) => {
+const MobileMenuItem = ({ item, pathname, onClose }) => {
   const isActive = pathname === item.path;
 
   return (
     <Link
       href={item.path}
       onClick={onClose}
-      className={`flex items-center justify-between p-4 hover:bg-slate-50 transition-colors duration-200 border-l-4 ${
+      className={`flex items-center justify-between p-4 hover:bg-slate-50 transition-colors duration-200 border-l-2 ${
         isActive 
-          ? "bg-blue-50 border-l-primary text-primary font-medium" 
+          ? "bg-blue-50 border-l-primary-light text-primary-light font-medium" 
           : "border-l-transparent text-foreground"
       }`}
     >
       <div className="flex items-center gap-3">
         <span className="text-lg"><item.icon size={20} strokeWidth={2} /></span>
-        <span className="text-sm sm:text-base">{item.name}</span>
+        <span className="text-sm sm:text-base font-normal">{item.name}</span>
       </div>
-      <ChevronRight className={`h-4 w-4 ${isActive ? "text-primary" : "text-gray-400"}`} />
+      <ChevronRight className={`h-4 w-4 ${isActive ? "text-primary-light" : "text-gray-400"}`} />
     </Link>
   );
 };
@@ -99,16 +95,14 @@ const MobileMenuItem = ({ item, pathname, onClose }: {
 const MobileNavigationSheet = ({ 
   isOpen, 
   onClose 
-}: { 
-  isOpen: boolean; 
-  onClose: () => void; 
 }) => {
   const pathname = usePathname();
 
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
-      <SheetContent side="left" className="w-full sm:w-[380px] p-0">
-        <SheetHeader className="px-6 py-4 border-b border-gray-200">
+      <SheetContent side="left" className="w-full sm:w-[380px] p-0 flex flex-col">
+        {/* Fixed Header */}
+        <SheetHeader className="px-6 py-4 border-b border-gray-200 flex-shrink-0">
           <div className="flex items-center justify-between">
             <SheetTitle className="text-xl font-medium text-gray-900">
               Menu
@@ -124,7 +118,8 @@ const MobileNavigationSheet = ({
           </div>
         </SheetHeader>
 
-        <div className="py-2">
+        {/* Scrollable Menu Content */}
+        <div className="flex-1 overflow-y-auto">
           <div className="space-y-1">
             {menuItems.map((item) => (
               <MobileMenuItem
@@ -137,8 +132,8 @@ const MobileNavigationSheet = ({
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-200 bg-gray-50">
+        {/* Fixed Footer */}
+        <div className="flex-shrink-0 p-6 border-t border-gray-200 bg-gray-50">
           <p className="text-xs text-gray-500 text-center">
             S-Class Banking Platform
           </p>
@@ -149,15 +144,10 @@ const MobileNavigationSheet = ({
 };
 
 // Main Navigation Component
-interface NavigationProps {
-  mobileMenuOpen?: boolean;
-  onMobileMenuClose?: () => void;
-}
-
 export default function Navigation({ 
   mobileMenuOpen = false, 
   onMobileMenuClose = () => {} 
-}: NavigationProps) {
+}) {
   return (
     <>
       <DesktopNavigation />

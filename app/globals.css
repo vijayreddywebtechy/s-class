@@ -144,9 +144,28 @@ a {
 /* Custom Container */
 .custom-container {
   max-width: 1440px;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 36px;
+  padding-right: 36px;
   margin: 0 auto;
+  @media screen and (max-width:768px) {
+    padding-left: 12px; padding-right: 12px;
+  }
+}
+
+.content-container{
+  max-width: 1328px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 0 auto;
+  @media screen and (max-width:768px) {
+    padding-left: 12px; padding-right: 12px;
+  }
 }
 
 
+
+/* 
+  slate-200 #E3E6EA very light cool gray with a slight blue tint.
+  slate-500 #5C6C80 cool grayish blue.
+  slate-950 #02070D very dark blue-black tone.
+*/
