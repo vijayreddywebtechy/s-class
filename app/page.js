@@ -37,7 +37,7 @@ const [date, setDate] = useState(undefined);
             className="w-48 h-10 md:h-12 justify-between text-sm text-foreground font-normal border-slate-500"
           >
             {date ? date.toLocaleDateString() : "Select date"}
-            <CalendarDays className="!w-5 !h-5 text-primary-light" />
+            <CalendarDays className="!w-5 !h-5 text-primary" />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-auto overflow-hidden p-0" align="start">

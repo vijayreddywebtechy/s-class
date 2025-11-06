@@ -26,10 +26,10 @@ const Transactions = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-bold text-sm md:text-base text-slate-950 mb-0.5">
+                  <h3 className="font-bold text-sm md:text-base text-gray-dark mb-0.5">
                     Everyday Checking Account
                   </h3>
-                  <p className="text-xs text-foreground">00 00 000 000 0 0</p>
+                  <p className="text-xs text-gray-medium">00 00 000 000 0 0</p>
                 </div>
               </div>
             </td>
@@ -38,19 +38,19 @@ const Transactions = () => {
             <td className="p-4">
               <div className="flex gap-8 items-center justify-end">
                 <div className="border-l border-primary pl-2">
-                  <p className="text-xs text-slate-500 mb-0.5">Available balance</p>
-                  <p className="text-sm md:text-base text-slate-950">R 37 586.59</p>
+                  <p className="text-xs text-gray-light mb-0.5">Available balance</p>
+                  <p className="text-sm md:text-base text-gray-dark">R 37 586.59</p>
                 </div>
                 <div className="border-l border-primary pl-2">
-                  <p className="text-xs text-slate-500 mb-0.5">Latest balance</p>
-                  <p className="text-sm md:text-base text-gray-900">R 35 586.59</p>
+                  <p className="text-xs text-gray-light mb-0.5">Latest balance</p>
+                  <p className="text-sm md:text-base text-gray-dark">R 35 586.59</p>
                 </div>
                 <Button
-                  variant="ghost"
+                  variant="outline"
                   size="icon"
-                  className="group rounded-lg border border-primary-light hover:bg-primary hover:border-primary flex-shrink-0"
+                  className="group border-primary hover:bg-primary flex-shrink-0"
                 >
-                  <ChevronDown className="h-5 w-5 text-primary-light group-hover:text-white" />
+                  <ChevronDown className="h-5 w-5 text-primary group-hover:text-white" />
                 </Button>
               </div>
             </td>

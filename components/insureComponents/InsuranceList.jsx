@@ -33,7 +33,7 @@ const InsuranceList = ({
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-bold text-sm md:text-base text-slate-950 mb-0.5">
+                    <h3 className="font-bold text-sm md:text-base text-gray-dark mb-0.5">
                       {insurance.title}
                     </h3>
                     <p className="text-xs text-foreground">
@@ -47,14 +47,14 @@ const InsuranceList = ({
               <td className="p-4 w-auto">
                 <div className="grid grid-cols-2">
                   <div className="border-l border-primary pl-2">
-                    <p className="text-xs text-slate-500 mb-0.5">Insured amount</p>
-                    <p className="text-sm md:text-base text-slate-950">
+                    <p className="text-xs text-gray-light mb-0.5">Insured amount</p>
+                    <p className="text-sm md:text-base text-gray-dark">
                       {insurance.insuredAmount}
                     </p>
                   </div>
                   <div className="border-l border-primary pl-2">
-                    <p className="text-xs text-slate-500 mb-0.5">Premium</p>
-                    <p className="text-sm md:text-base text-gray-900">
+                    <p className="text-xs text-gray-light mb-0.5">Premium</p>
+                    <p className="text-sm md:text-base text-gray-dark">
                       {insurance.premium}
                     </p>
                   </div>
@@ -70,14 +70,14 @@ const InsuranceList = ({
                         <Button
                           variant="ghost"
                           onClick={insurance.onClaimsClick}
-                          className="text-sm font-medium uppercase text-primary-light hover:text-primary-light hover:bg-blue-100"
+                          className="text-sm font-medium uppercase text-primary hover:text-primary hover:bg-blue-100" size="md"
                         >
                           CLAIMS
                         </Button>
                       ) : (
                         <Button
                           variant="outline"
-                          className="text-sm bg-slate-200 text-slate-500 border-none uppercase cursor-not-allowed !opacity-100"
+                          className="text-sm bg-slate-200 text-gray-light border-none uppercase cursor-not-allowed !opacity-100" size="md"
                           disabled
                         >
                           CLAIMS
@@ -91,14 +91,14 @@ const InsuranceList = ({
                         <Button
                           variant="ghost"
                           onClick={insurance.onKeyTermsClick}
-                          className="text-sm font-medium uppercase text-primary-light hover:text-primary-light hover:bg-blue-100"
+                          className="text-sm font-medium uppercase text-primary hover:text-primary hover:bg-blue-100" size="md"
                         >
                           KEY TERMS
                         </Button>
                       ) : (
                         <Button
                           variant="outline"
-                          className="text-sm bg-slate-200 text-slate-500 border-none uppercase cursor-not-allowed !opacity-100"
+                          className="text-sm bg-slate-200 text-gray-light border-none uppercase cursor-not-allowed !opacity-100" size="md"
                           disabled
                         >
                           KEY TERMS
@@ -111,9 +111,9 @@ const InsuranceList = ({
                       variant="ghost"
                       size="icon"
                       onClick={insurance.onMenuClick}
-                      className="group rounded-lg border border-primary-light hover:bg-primary hover:border-primary flex-shrink-0"
+                      className="group border border-primary hover:bg-primary hover:border-primary flex-shrink-0"
                     >
-                      <MoreVertical className="h-5 w-5 text-primary-light group-hover:text-white" />
+                      <MoreVertical className="h-5 w-5 text-primary group-hover:text-white" />
                     </Button>
                   )}
                 </div>

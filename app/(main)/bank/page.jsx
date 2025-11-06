@@ -77,8 +77,8 @@ const BankPage = () => {
   return (
     <div className="bg-slate-100 h-full overflow-auto">
       <div className="content-container py-10">
-        <h2 className="text-xl md:text-2xl lg:text-3xl text-slate-950 leading-tight mb-5">Your Bank Accounts</h2>
-        <p className="text-sm md:text-base text-foreground mb-6">
+        <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-dark leading-tight mb-5">Your Bank Accounts</h2>
+        <p className="text-sm md:text-base text-gray-medium mb-6">
           Tamlyn, these deals are recommended for you.
         </p>
         
@@ -111,10 +111,10 @@ const BankPage = () => {
         </div>
 
           <Button
-            variant="outline"
-            className="ml-auto flex text-sm font-medium uppercase text-slate-500 bg-slate-200 border-slate-200 hover:bg-gray-200 mb-6"
+            variant="ghost"
+            className="group ml-auto flex uppercase text-gray-light bg-slate-200 hover:bg-primary/10 hover:text-primary mb-6"
           >
-            <CirclePlus className="!w-6 !h-6" strokeWidth={1.5}/> Add a bank account
+            <CirclePlus className="!w-6 !h-6 group-hover:text-primary" strokeWidth={1.5}/> Add a bank account
           </Button>
 
         {/* Account List */}

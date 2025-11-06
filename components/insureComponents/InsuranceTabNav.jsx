@@ -18,8 +18,8 @@ const InsuranceTabNav = () => {
         onClick={() => router.push("/insure/key-terms")}
         className={`text-sm font-medium p-4 h-10 md:h-12 rounded-none ${
           isKeyTermsActive
-            ? "text-primary-light border-b-2 border-primary-light hover:text-primary-light hover:bg-blue-100"
-            : "text-foreground hover:bg-slate-100"
+            ? "text-primary border-b-2 border-primary hover:text-primary hover:bg-blue-100"
+            : "text-gray-light hover:bg-slate-100"
         }`}
       >
         Key Terms
@@ -29,8 +29,8 @@ const InsuranceTabNav = () => {
         onClick={() => router.push("/insure/claims")}
         className={`text-sm font-medium p-4 h-10 md:h-12 rounded-none ${
           isClaimsActive
-            ? "text-primary-light border-b-2 border-primary-light hover:text-primary-light hover:bg-blue-100"
-            : "text-foreground hover:bg-slate-100"
+            ? "text-primary border-b-2 border-primary hover:text-primary hover:bg-blue-100"
+            : "text-gray-light hover:bg-slate-100"
         }`}
       >
         Claims

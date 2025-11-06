@@ -25,10 +25,10 @@ const HoldingsTable = ({ holdings }) => {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-bold text-sm md:text-base text-slate-950 mb-0.5">
+                    <h3 className="font-bold text-sm md:text-base text-gray-dark mb-0.5">
                       {holding.title}
                     </h3>
-                    <p className="text-xs text-foreground">
+                    <p className="text-xs text-gray-medium">
                       {holding.accountNumber}
                     </p>
                   </div>
@@ -39,32 +39,32 @@ const HoldingsTable = ({ holdings }) => {
               <td className="p-4 w-auto">
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                   <div className="border-l border-primary pl-2">
-                    <p className="text-xs text-slate-500 mb-0.5">Market Value</p>
-                    <p className="text-sm md:text-base text-slate-950">
+                    <p className="text-xs text-gray-light mb-0.5">Market Value</p>
+                    <p className="text-sm md:text-base text-gray-dark">
                       {holding.marketValue}
                     </p>
                   </div>
                   <div className="border-l border-primary pl-2">
-                    <p className="text-xs text-slate-500 mb-0.5">Gains/Loss</p>
-                    <p className="text-sm md:text-base text-slate-950">
+                    <p className="text-xs text-gray-light mb-0.5">Gains/Loss</p>
+                    <p className="text-sm md:text-base text-gray-dark">
                       {holding.gainsLoss}
                     </p>
                   </div>
                   <div className="border-l border-primary pl-2">
-                    <p className="text-xs text-slate-500 mb-0.5">Percentage Change</p>
-                    <p className="text-sm md:text-base text-slate-950">
+                    <p className="text-xs text-gray-light mb-0.5">Percentage Change</p>
+                    <p className="text-sm md:text-base text-gray-dark">
                       {holding.percentageChange}
                     </p>
                   </div>
                   <div className="border-l border-primary pl-2">
-                    <p className="text-xs text-slate-500 mb-0.5">Units</p>
-                    <p className="text-sm md:text-base text-slate-950">
+                    <p className="text-xs text-gray-light mb-0.5">Units</p>
+                    <p className="text-sm md:text-base text-gray-dark">
                       {holding.units}
                     </p>
                   </div>
                   <div className="border-l border-primary pl-2">
-                    <p className="text-xs text-slate-500 mb-0.5">Price</p>
-                    <p className="text-sm md:text-base text-slate-950">
+                    <p className="text-xs text-gray-light mb-0.5">Price</p>
+                    <p className="text-sm md:text-base text-gray-dark">
                       {holding.price}
                     </p>
                   </div>

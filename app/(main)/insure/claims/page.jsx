@@ -41,8 +41,8 @@ const ClaimsPage = () => {
       <div className="content-container pb-10">
         <InsuranceTabNav />
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl md:text-2xl lg:text-3xl text-slate-950 leading-tight">Claims</h2>
-          <Button variant="ghost" className="text-primary-light shadow-none hover:bg-blue-100 hover:text-primary-light">
+          <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-dark leading-tight">Claims</h2>
+          <Button variant="ghost" className="text-primary shadow-none hover:bg-blue-100 hover:text-primary">
             <CirclePlus className="!w-6 !h-6 -mt-0.5" strokeWidth={1.5} />
             SUBMIT A CLAIM
           </Button>

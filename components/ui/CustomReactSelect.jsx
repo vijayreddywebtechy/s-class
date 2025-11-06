@@ -8,17 +8,18 @@ import { ChevronDown, Check } from "lucide-react";
 // Note: React Select uses inline styles, so we need actual HSL values, not CSS variables
 const colors = {
   // Border colors
-  input: "hsl(0, 0%, 89.8%)",           // --input
-  ring: "hsl(214, 100%, 44%)",          // --ring (focus color)
+  input: "hsl(210 16% 44%)",         // --input (#5c6c80)
+  ring: "hsl(212, 100%, 44%)",         // --ring (focus color - primary)
   
   // Text colors
-  foreground: "hsl(213, 50%, 20%)",     // --foreground
-  mutedForeground: "hsl(0, 0%, 45.1%)", // --muted-foreground
+  greyLight: "hsl(210, 16%, 44%)",     // --gray-light (#5c6c80) for placeholder
+  greyMedium: "hsl(210, 48%, 20%)",    // --gray-medium (#1a314d) for selected value
+  foreground: "hsl(210, 48%, 20%)",    // --foreground for options
   
   // Background colors
-  background: "hsl(0, 0%, 100%)",       // --background (white)
-  accent: "hsl(214, 100%, 95%)",        // light blue for hover (custom)
-  accentActive: "hsl(214, 100%, 90%)",  // darker blue for active (custom)
+  background: "hsl(0, 0%, 100%)",      // --background (white)
+  accent: "hsl(214, 100%, 95%)",       // light blue for hover
+  accentActive: "hsl(214, 100%, 90%)", // darker blue for active
 };
 
 // Responsive sizing
@@ -26,8 +27,8 @@ const sizing = {
   radius: "0.375rem",        // rounded-md
   minHeightMobile: "2.5rem", // h-10
   minHeightDesktop: "3rem",  // h-12
-  fontSizeMobile: "1rem",    // text-base
-  fontSizeDesktop: "0.875rem", // text-sm
+  fontSizeDefault: "14px",   // 14px default
+  fontSizeMd: "16px",        // 16px on md screens
 };
 
 const customSelectStyles = {
@@ -55,18 +56,18 @@ const customSelectStyles = {
   },
   singleValue: (base) => ({
     ...base,
-    color: colors.foreground,
-    fontSize: sizing.fontSizeMobile,
+    color: colors.greyMedium,
+    fontSize: sizing.fontSizeDefault,
     "@media (min-width: 768px)": {
-      fontSize: sizing.fontSizeDesktop,
+      fontSize: sizing.fontSizeMd,
     },
   }),
   placeholder: (base) => ({
     ...base,
-    fontSize: sizing.fontSizeMobile,
-    color: colors.mutedForeground,
+    fontSize: sizing.fontSizeDefault,
+    color: colors.greyLight,
     "@media (min-width: 768px)": {
-      fontSize: sizing.fontSizeDesktop,
+      fontSize: sizing.fontSizeMd,
     },
   }),
   option: (base, state) => ({
@@ -92,7 +93,7 @@ const DropdownIndicator = (props) => {
     <selectComponents.DropdownIndicator {...props}>
       <ChevronDown
         size={22}
-        className="text-primary-light" strokeWidth={1.8} // custom color
+        className="text-primary" strokeWidth={1.8} // custom color
       />
     </selectComponents.DropdownIndicator>
   );
@@ -108,7 +109,7 @@ const Option = (props) => {
       <div className="flex items-center w-full">
         <span className="w-6 flex justify-center">
           {props.isSelected && (
-            <Check size={18} className="text-primary-light" strokeWidth={1.5} />
+            <Check size={18} className="text-primary" strokeWidth={1.5} />
           )}
         </span>
         <span>{props.label}</span>
@@ -118,7 +119,11 @@ const Option = (props) => {
 };
 
 function CustomReactSelect(props) {
-  return <Select {...props} 
+  const { instanceId, ...restProps } = props;
+  
+  return <Select 
+            {...restProps}
+            instanceId={instanceId}
             styles={customSelectStyles} 
             components={{ 
               DropdownIndicator,

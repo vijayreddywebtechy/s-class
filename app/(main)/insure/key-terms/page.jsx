@@ -45,12 +45,12 @@ const KeyTermsPage = () => {
       <div className="content-container pb-10">
         <InsuranceTabNav />
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl md:text-2xl lg:text-3xl text-slate-950 leading-tight">
+          <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-dark leading-tight">
             Key Terms
           </h2>
           <Button
             variant="ghost"
-            className="text-primary-light shadow-none hover:bg-blue-100 hover:text-primary-light"
+            className="text-primary shadow-none hover:bg-blue-100 hover:text-primary"
           >
             <CirclePlus className="!w-6 !h-6 -mt-0.5" strokeWidth={1.5} />
             SUBMIT A CLAIM
@@ -70,7 +70,7 @@ const KeyTermsPage = () => {
 
         {/* Download Policy Schedule Button */}
         <div className="mt-6 flex justify-end">
-          <Button className="text-sm font-medium uppercase shadow-none bg-primary-light h-10 md:h-12">
+          <Button className="text-sm font-medium uppercase shadow-none bg-primary h-10 md:h-12">
             DOWNLOAD POLICY SCHEDULE
           </Button>
         </div>

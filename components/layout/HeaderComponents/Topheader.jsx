@@ -33,10 +33,14 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 const TopHeader = ({ onMenuClick }) => {
   const [profileOpen, setProfileOpen] = useState(false);
   return (
-    <div className="bg-primary">
+    <div className="bg-primary-dark">
       <div className="custom-container flex justify-between items-center h-16 !pr-0 sm:!pr-3">
         <div className="flex items-center gap-1">
-          <Button className="p-2 shadow-none md:hidden" onClick={onMenuClick}>
+          <Button
+            variant="ghost"
+            className="p-2 shadow-none md:hidden"
+            onClick={onMenuClick}
+          >
             <Menu className="!w-5 !h-5" />
           </Button>
           <Link href="/" className="flex items-center gap-1.5">
@@ -56,7 +60,10 @@ const TopHeader = ({ onMenuClick }) => {
           </Link>
         </div>
         <div className="h-full flex items-center gap-0.5">
-          <Button className="px-3 shadow-none">
+          <Button
+            variant="ghost"
+            className="px-3 shadow-none hover:bg-primary/10"
+          >
             <Image
               src={iconPeopleCollab}
               alt="People Collaboration Icon"
@@ -65,7 +72,10 @@ const TopHeader = ({ onMenuClick }) => {
               className="hidden sm:block"
             />
           </Button>
-          <Button className="px-3 shadow-none">
+          <Button
+            variant="ghost"
+            className="px-3 shadow-none hover:bg-primary/10"
+          >
             <Image
               src={iconContacts}
               alt="Contacts Icon"
@@ -74,11 +84,15 @@ const TopHeader = ({ onMenuClick }) => {
               className="hidden sm:block"
             />
           </Button>
-          <Button className="px-3 shadow-none">
+          <Button
+            variant="ghost"
+            className="px-3 shadow-none hover:bg-primary/10"
+          >
             <Image src={iconSearch} alt="Search Icon" width={24} height={24} />
           </Button>
           <Button
-            className="px-3 shadow-none text-sm font-normal flex items-center gap-1"
+            variant="ghost"
+            className="px-3 shadow-none text-sm font-normal flex items-center gap-1 text-white hover:bg-primary/10 hover:text-white"
             onClick={() => setProfileOpen(true)}
           >
             <Image
@@ -96,7 +110,10 @@ const TopHeader = ({ onMenuClick }) => {
               className="ml-1 hidden sm:block"
             />
           </Button>
-          <Button className="h-full px-4 shadow-none text-sm font-normal flex items-center gap-1 bg-primary-light rounded-none">
+          <Button
+            variant="ghost"
+            className="h-full px-4 shadow-none text-sm text-white hover:text-white  font-normal flex items-center gap-1 bg-primary-medium hover:bg-primary/10 rounded-none"
+          >
             <Image src={iconLocked} alt="Locked Icon" width={24} height={24} />
             <span className="leading-normal hidden sm:block">SIGN OUT</span>
           </Button>
@@ -118,7 +135,7 @@ const TopHeader = ({ onMenuClick }) => {
                 onClick={() => setProfileOpen(false)}
                 className="h-8 w-8 rounded-full hover:bg-slate-100"
               >
-                <X className="!h-7 !w-7 text-primary-light" strokeWidth={1.5} />
+                <X className="!h-7 !w-7 text-primary" strokeWidth={1.5} />
               </Button>
             </div>
           </SheetHeader>
@@ -139,7 +156,7 @@ const TopHeader = ({ onMenuClick }) => {
                   <h3 className="text-lg font-medium text-foreground leading-tight">
                     Lee Jones
                   </h3>
-                  <p className="text-xs text-slate-500">leejones@gmail.com</p>
+                  <p className="text-xs text-gray-light">leejones@gmail.com</p>
                 </div>
               </div>
               <Button
@@ -148,7 +165,7 @@ const TopHeader = ({ onMenuClick }) => {
                 className="h-8 w-8 rounded-full hover:bg-slate-100"
               >
                 <ChevronDown
-                  className="!h-6 !w-6 text-primary-light"
+                  className="!h-6 !w-6 text-primary"
                   strokeWidth={1.5}
                 />
               </Button>

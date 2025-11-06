@@ -22,7 +22,7 @@ const FooterNavigation = () => {
           <Link
             key={link.label}
             href={link.href}
-            className="font-bspro font-medium text-sm text-white uppercase leading-tight py-1 hover:text-primary-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2 focus:ring-offset-gray-800 rounded"
+            className="font-bspro font-medium text-sm text-white uppercase leading-tight py-1 hover:text-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-gray-800 rounded"
           >
             {link.label}
           </Link>
@@ -49,7 +49,7 @@ const SocialMediaLinks = () => {
           href={social.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:opacity-80 transition-opacity duration-200 focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2 focus:ring-offset-gray-800 rounded"
+          className="hover:opacity-80 transition-opacity duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-gray-800 rounded"
         >
           <Image 
             src={social.icon} 

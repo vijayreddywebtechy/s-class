@@ -42,7 +42,7 @@ const HoldingsPage = () => {
   return (
     <div className="bg-slate-100 h-full overflow-auto">
       <div className="content-container py-10">
-        <h2 className="text-3xl text-slate-950 leading-tight mb-5">
+        <h2 className="text-3xl text-gray-dark leading-tight mb-5">
           Holdings
         </h2>
 

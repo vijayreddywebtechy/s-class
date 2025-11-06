@@ -36,10 +36,10 @@ const AccountList = ({
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-bold text-sm md:text-base text-slate-950 mb-0.5">
+                    <h3 className="font-bold text-sm md:text-base text-gray-dark mb-0.5">
                       {account.title}
                     </h3>
-                    <p className="text-xs text-foreground">
+                    <p className="text-xs text-gray-medium">
                       {account.accountNumber}
                     </p>
                   </div>
@@ -50,16 +50,16 @@ const AccountList = ({
               <td className="p-4 w-auto">
                 <div className="grid grid-cols-2">
                   <div className="border-l border-primary pl-2">
-                    <p className="text-xs text-slate-500 mb-0.5">Balance</p>
-                    <p className="text-sm md:text-base text-slate-950">
+                    <p className="text-xs text-gray-light mb-0.5">Balance</p>
+                    <p className="text-sm md:text-base text-gray-dark">
                       {account.balance}
                     </p>
                   </div>
                   <div className="border-l border-primary pl-2">
-                    <p className="text-xs text-slate-500 mb-0.5">
+                    <p className="text-xs text-gray-light mb-0.5">
                       Available balance
                     </p>
-                    <p className="text-sm md:text-base text-gray-900">
+                    <p className="text-sm md:text-base text-gray-dark">
                       {account.availableBalance}
                     </p>
                   </div>
@@ -75,14 +75,14 @@ const AccountList = ({
                         <Button
                           variant="ghost"
                           onClick={account.onTransactionsClick}
-                          className="text-sm font-medium uppercase text-primary-light hover:text-primary-light hover:bg-blue-100"
+                          className="uppercase text-primary hover:text-primary hover:bg-blue-100" size="md"
                         >
                           TRANSACTIONS
                         </Button>
                       ) : (
                         <Button
-                          variant="outline"
-                          className="text-sm bg-slate-200 text-slate-500 border-none uppercase cursor-not-allowed !opacity-100"
+                          variant="ghost"
+                          className="bg-slate-200 text-gray-light border-none uppercase cursor-not-allowed !opacity-100" size="md"
                           disabled
                         >
                           TRANSACTIONS
@@ -92,12 +92,12 @@ const AccountList = ({
                   )}
                   {account.onMenuClick && (
                     <Button
-                      variant="ghost"
+                      variant="outline"
                       size="icon"
                       onClick={account.onMenuClick}
-                      className="group rounded-lg border border-primary-light hover:bg-primary hover:border-primary flex-shrink-0"
+                      className="group border border-primary hover:bg-primary hover:border-primary flex-shrink-0"
                     >
-                      <MoreVertical className="h-5 w-5 text-primary-light group-hover:text-white" />
+                      <MoreVertical className="h-5 w-5 text-primary group-hover:text-white" />
                     </Button>
                   )}
                 </div>
@@ -114,18 +114,18 @@ const AccountList = ({
               <td className="p-4">
                 <div className="grid grid-cols-2">
                   <div>
-                    <p className="text-xs text-slate-950 font-medium mb-0.5">
+                    <p className="text-xs text-gray-dark font-medium mb-0.5">
                       Total Balance
                     </p>
-                    <p className="text-sm md:text-base font-normal text-slate-950">
+                    <p className="text-sm md:text-base font-normal text-gray-dark">
                       {totalBalance}
                     </p>
                   </div>
                   <div>
-                    <p className="text-xs text-slate-950 font-medium mb-0.5">
+                    <p className="text-xs text-gray-dark font-medium mb-0.5">
                       Total Available Balance
                     </p>
-                    <p className="text-sm md:text-base font-normal text-slate-950">
+                    <p className="text-sm md:text-base font-normal text-gray-dark">
                       {totalAvailableBalance}
                     </p>
                   </div>

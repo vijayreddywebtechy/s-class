@@ -47,15 +47,15 @@ const DesktopNavigation = () => {
   const pathname = usePathname();
 
   return (
-    <div className="hidden md:block bg-[#003FCA] h-9">
+    <div className="hidden md:block bg-primary-medium h-9">
       <nav className="custom-container mx-auto px-4 text-white h-full flex items-center">
         <ul className="flex h-full overflow-x-auto scrollbar-hide">
           {menuItems.map((item) => (
             <li key={item.path} className="h-full flex-shrink-0">
               <Link
                 href={item.path}
-                className={`h-full flex items-center text-sm font-normal text-white px-3 lg:px-4 hover:bg-primary-light transition-colors duration-200 whitespace-nowrap ${
-                  pathname === item.path ? "bg-primary-light" : ""
+                className={`h-full flex items-center text-sm font-normal text-white px-3 lg:px-4 hover:bg-primary transition-colors duration-200 whitespace-nowrap ${
+                  pathname === item.path ? "bg-primary" : ""
                 }`}
               >
                 {item.name}
@@ -78,7 +78,7 @@ const MobileMenuItem = ({ item, pathname, onClose }) => {
       onClick={onClose}
       className={`flex items-center justify-between p-4 hover:bg-slate-50 transition-colors duration-200 border-l-2 ${
         isActive 
-          ? "bg-blue-50 border-l-primary-light text-primary-light font-medium" 
+          ? "bg-blue-50 border-l-primary text-primary font-medium" 
           : "border-l-transparent text-foreground"
       }`}
     >
@@ -86,7 +86,7 @@ const MobileMenuItem = ({ item, pathname, onClose }) => {
         <span className="text-lg"><item.icon size={20} strokeWidth={2} /></span>
         <span className="text-sm sm:text-base font-normal">{item.name}</span>
       </div>
-      <ChevronRight className={`h-4 w-4 ${isActive ? "text-primary-light" : "text-gray-400"}`} />
+      <ChevronRight className={`h-4 w-4 ${isActive ? "text-primary" : "text-gray-400"}`} />
     </Link>
   );
 };

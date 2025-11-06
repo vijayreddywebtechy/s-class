@@ -33,10 +33,10 @@ const InvestmentList = ({
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-bold text-sm md:text-base text-slate-950 mb-0.5">
+                    <h3 className="font-bold text-sm md:text-base text-gray-dark mb-0.5">
                       {investment.title}
                     </h3>
-                    <p className="text-xs text-foreground">
+                    <p className="text-xs text-gray-medium">
                       {investment.accountNumber}
                     </p>
                   </div>
@@ -46,8 +46,8 @@ const InvestmentList = ({
               {/* Market Value Column */}
               <td className="p-4 w-auto">
                 <div className="border-l border-primary pl-2">
-                  <p className="text-xs text-slate-500 mb-0.5">Market Value</p>
-                  <p className="text-sm md:text-base text-slate-950">
+                  <p className="text-xs text-gray-light mb-0.5">Market Value</p>
+                  <p className="text-sm md:text-base text-gray-dark">
                     {investment.marketValue}
                   </p>
                 </div>
@@ -62,14 +62,14 @@ const InvestmentList = ({
                         <Button
                           variant="ghost"
                           onClick={investment.onHoldingsClick}
-                          className="text-sm font-medium uppercase text-primary-light hover:text-primary-light hover:bg-blue-100"
+                          className="uppercase text-primary hover:text-primary hover:bg-blue-100" size="md"
                         >
                           HOLDINGS
                         </Button>
                       ) : (
                         <Button
-                          variant="outline"
-                          className="text-sm bg-slate-200 text-slate-500 border-none uppercase cursor-not-allowed !opacity-100"
+                          variant="ghost"
+                          className="bg-slate-200 text-gray-light border-none uppercase cursor-not-allowed !opacity-100" size="md"
                           disabled
                         >
                           HOLDINGS
@@ -79,12 +79,12 @@ const InvestmentList = ({
                   )}
                   {investment.onMenuClick && (
                     <Button
-                      variant="ghost"
+                      variant="outline"
                       size="icon"
                       onClick={investment.onMenuClick}
-                      className="group rounded-lg border border-primary-light hover:bg-primary hover:border-primary flex-shrink-0"
+                      className="group border-primary hover:bg-primary hover:border-primary flex-shrink-0"
                     >
-                      <MoreVertical className="h-5 w-5 text-primary-light group-hover:text-white" />
+                      <MoreVertical className="h-5 w-5 text-primary group-hover:text-white" />
                     </Button>
                   )}
                 </div>
